@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/profile.css" />
+<link rel="shortcut icon" type="image/png" href="image/cybernexus.png">
+<title>CyberNexux- Give Love for Adopting Animals</title>
+
+</head>
+<body>
+    <div class="nav-wrapper">
+
+      <!--LOGO CONATINER-->
+        <div class="logo-container">
+          <a href="index.html"><i><img class="logo" src="image/cybernexus.png" alt="Logo"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=61557371417634"><i><img class="logo" src="image/PET_ADOPTION-removebg-preview.png" alt="Logo"></i></a>
+        </div>
+
+        <nav>
+            <input class="hidden" type="checkbox" id="menuToggle">
+            <label class="menu-btn" for="menuToggle">
+                <div class="menu"></div>
+                <div class="menu"></div>
+                <div class="menu"></div>
+            </label>
+
+            <!--NAV BAR-->
+            <div class="nav-container">
+                <ul class="nav-tabs">
+                   <!--HOME-->
+                     <li><a href="index.html">
+                      <button type="button">Home</button>
+                     </a> </li>
+
+                   <!--LISTINGS-->
+                     <li><a href="Listing.html">
+                      <button type="button">Listings</button>
+                     </a> </li>
+
+                   <!--DROP DOWN FOR CAT AND DOG-->
+                       <div class="dropdown">
+                        <button class="dropbtn">Adopt</button>
+                       <div class="dropdown-content">
+                          <a href="adoptcat.html">Adopt a Cat</a>
+                          <a href="adoptdog.html">Adopt a Dog</a>
+                       </div>
+                       </div>
+                  <!--PROFILE-->
+                     <li><a href="Profile.html">
+                      <button type="button">Pet Profiles</button>
+                     </a></li>
+                  <!--CONTACT-->  
+                     <li><a href="contact.html">
+                      <button type="button">Contact</button>
+                     </a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <h1>Welcome to Pet Profiles! </h1>
+    <h1>Here, you can create profiles for pets in need of adoption, including uploading photos and</h1>
+    <h1>providing information about the animal's personality, history, and needs.</h1>
+    <br>
+    <br>
+
+<!--PET FORM-->
+<div class="card">
+  <img id="petImage" src="image/profile2.jpg" alt="Pet Image">
+
+  <div class="content">
+    <button onclick="document.getElementById('fileInput').click()" class="upload-btn">Upload Image</button>
+    <textarea id="brred" class="description-textarea" placeholder="Breed"></textarea>
+    <textarea id="name" class="description-textarea" placeholder="Name"></textarea>
+    <input type="file" id="fileInput" class="file-input" onchange="previewImage(event)">
+    <textarea id="personality" class="description-textarea" placeholder="Personality of the pet"></textarea>
+    <textarea id="history" class="description-textarea" placeholder="History of the pet"></textarea>
+    <textarea id="needs" class="description-textarea" placeholder="Needs of the pet"></textarea>
+    <button onclick="saveProfile()" class="save-btn">Save Profile</button>
+  </div>
+</div>
+
+
+
+
+
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+
+
+<!--FOOTER SECTION-->
+<footer>
+  <footer class="footer">
+      
+         <div class="row">
+           <div class="footer-col">
+            <h4><b>Cybernexus</b></h4>
+            <h4>
+              Get started on Cybernexux in order to live and bring joy To Both Animals And Their Human Companions.
+            </h4>
+             <div class="row">
+              
+              <a href="https://web.facebook.com/profile.php?id=61557371417634"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cyber_nexux/"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/home"><i class="fa fa-twitter"></i></a>
+              </div>
+             
+              <h4>@2024 Cybernexux. All rights reserved</h4>
+           </div>
+           <div class="footer-col">
+            <!--quick links-->
+             <h4><b>Quick Links</b></h4>
+             <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="Listing.html">Listings</a></li>
+               <li><a href="adoptdog.html">Adopt a Dog</a></li>
+               <li><a href="adoptcat.html">Adopt a Cat</a></li>
+               <li><a href="Profile.html">Pet profiles</a></li>
+               <li><a href="contact.html">Contact</a></li>
+             </ul>
+           </div>
+           
+             
+           <div class="footer-col">
+             <h4><b>Contacts us</b></h4>
+             <h4>Email: cybernexus@gmail.com</h4>
+             <h4>Phone: 09151308180</h4>
+             <h4>Address: 1234 Arellano Street Dagupan City</h4>
+            </ul>
+           </div>
+         </div>
+       </div>
+    </footer>
+  
+  </html>
+<!--JAVA SCRIPT FOR THE PET FORM-->
+<script>
+    function previewImage(event) {
+      var input = event.target;
+      var reader = new FileReader();
+      reader.onload = function(){
+        var img = document.getElementById('petImage');
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  
+    function saveProfile() {
+      var personality = document.getElementById('personality').value;
+      var history = document.getElementById('history').value;
+      var needs = document.getElementById('needs').value;
+      console.log("Personality: " + personality);
+      console.log("History: " + history);
+      console.log("Needs: " + needs);
+      alert("Profile saved successfully!");
+    }
+  </script>
+</html>
